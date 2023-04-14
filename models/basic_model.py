@@ -33,8 +33,9 @@ class BasicModel(ABC):
         source_id = f"{source_id}_{level}"
         return self.open_data("qaos", source_id)
 
-    def get_answers(self, q_type, passage_index, source_id):
-        pass
+    def get_answers(self, source_id_question, source_id_retrieval):
+        source_id = f"{source_id_question}_{source_id_retrieval}"
+        return self.open_data("answers", source_id)
 
 
     def open_data(self, key, source_id):
